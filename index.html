@@ -18,11 +18,14 @@
     </ul>
 
     <button type="button" id="charger" class="btn btn-dark">Update Datas</button <!-- Optional JavaScript -->
+        <button type="button" id="effacer" class="btn btn-dark">Clear Datas</button <!-- Optional JavaScript -->
+
     <!-- JQuery script -->
   
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 
+    <script src="script.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script> -->
@@ -36,68 +39,6 @@
         <!-- script -->
 
 
-        <script>
-            $(function () {
-                    $('#charger').click(function () {
-                        $.ajax ({
-                        type: 'GET',
-                        url: 'http://127.0.0.1:3030/liste',
-                        success: function (donnees) {
-                            console.log(donnees);
-                            // $('#r').html('<li>first : ' + donnees.first + '</li>');
-    
-                            // $('#r').append('<li>last : ' + donnees.last + '</li>');
-
-
-                            // parcourir un tableau avec for
-                        for (var i=0, c = donnees.length; i < c; i++){
-                                // console.log(donnees[i].name.first)
-                                $('#r').append('<li class="list-group-item">Name : ' + donnees[i].name.first +' '+donnees[i].name.last+ '</li>');
-                            }
-        
-                            },
-                                error: function () {
-        
-                                alert('La requête n\'a pas abouti');
-                            }
- 
-                        });
-    
-                });
-                //
-                $(document).ready(function() {
-                    $.ajax ({
-                        type: 'GET',
-                        url: 'http://127.0.0.1:3030/liste',
-                        success: function (donnees) {
-                            console.log(donnees);
-                            // $('#r').html('<li>first : ' + donnees.first + '</li>');
-    
-                            // $('#r').append('<li>last : ' + donnees.last + '</li>');
-
-
-                            // parcourir un tableau avec for
-                        for (var i=0, c = donnees.length; i < c; i++){
-                                // console.log(donnees[i].name.first)
-                                $('#r').append('<li class="list-group-item">Name : ' + donnees[i].name.first +' '+donnees[i].name.last+ '</li>');
-                            }
-        
-                            },
-                                error: function () {
-        
-                                alert('La requête n\'a pas abouti');
-                            }
- 
-                        });
-                });
-
-                //
-    
-            });
-
-
-
-        </script>
 </body>
 
 </html>
